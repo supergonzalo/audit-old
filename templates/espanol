@@ -1,0 +1,78 @@
+intro
+<p><b>Objetivo del estudio</b><br>
+Construir un modelo de performance de las instalaciones con el fin de detectar áreas donde el consumo energético conviene ser$
+</p>
+<p><b>Metodología</b><br>
+El estudio se desarrollo en dos etapas, entre los dias {{fecha_inicio}} y {{fecha_final}}:
+<ul><li>Se realizaron mediciones en las instalaciones.
+<ul><li>Registro y estudio de consumo energético sectorizado por área física.
+<li>Medición de cargas térmicas y eficiencia de la estructura.
+<li>Registro y evaluación de cargas eléctricas y eficiencia de equipos. Registro de cargas electricas residuales.
+ </ul>
+<li>Utilizando las mediciones construyo un modelo de performace energética que permite simular el comportamiento del edificio$
+</ul>
+El siguiente informe presenta:
+<ul>
+<li>Registro y estudio de consumo energético sectorizado por área física.
+<li>Medición de cargas térmicas y eficiencia de la estructura.
+<li>Registro y evaluación de cargas eléctricas y eficiencia de equipos.
+<li>Registro de cargas electricas residuales.
+<li>Análisis funcional del espacio de trabajo. Simulación con los datos obtenidos.
+<li>Comparación entre los datos simulados y los medidos.
+<li>Conclusiones
+</ul>
+</p>
+<br>
+
+proyeccion_consumo_anual
+<b>Modelo fisico de las instalaciones</b><br>
+En base a las mediciones estructurales y electricas realizadas,se obtiene las siguiente proyeccion de consumo a lo largo de u$
+<div align=center>
+<table><tr><td>
+<img src="t" width="250px" height="300px" ></td>
+<td><ul><li>Calefaccion<li>Refrigeracion<li>Iluminacion
+</td>
+</tr>
+</table>
+</div>
+<p>
+El analisis de distribucion total indica que el mayor uso de energia se da en el area de {{analisis_uso_energia}}.
+<br>{{consecuencias_uso_energia}}<br>
+
+proyeccion_consumo_mensual
+Proyectando el consumo a lo largo de un ano de funcionamiento normal y teniendo en cuenta las variaciones climaticas, se esti$
+<br>
+<div align=center>
+<table width="100%">
+<tr><td align=center>
+<img src="a" width="250px" height="300px"></td><td align=center><img src="b" width="250px" height="300px"></td><td align=cent$
+<tr><td align=center>Calefaccion</td><td align=center>Refrigeracion</td><td align=center>Iluminacion</td></tr></table>
+</div>
+
+consumo_por_ambiente
+Se listan a continuacion los ambientes relevados y su consumo respectivo anual
+
+<table align=center border="5" summary="Tabla de consumo por ambiente."><tr><td align=center>Ambiente</td><td align=center wi$
+{% for linea in cuadro_consumo_ambientes %}
+    <tr>
+        {% for valor in linea %}
+        <td align=center>{{ valor }}</td>
+        {% endfor %}
+    <tr>
+{% endfor %}
+</table>
+<br>
+En lo que respecta a consumos parciales, el area que representa mayor impacto es XXX utilizando principalmente la energia par$
+</p>
+
+fuera_de_horario
+Relevamiento de consumo fuera de horario laboral
+
+XXX Imagen
+
+El estudio de cargas electricas residuales determino que las mimas XXX representan una un factor de peso en el consumo anual.$
+
+</div>
+
+
+

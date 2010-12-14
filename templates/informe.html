@@ -1,0 +1,63 @@
+{% extends "template.html" %}
+
+{% block "body" %}
+<table width='100%'>
+<tr><td>Codigo de cliente:</td></tr>
+<tr><td>Edificio:</td><td>Fecha de relevamiento</td></tr>
+<tr><td>Ubicacion</td>
+</table>
+<h2>Puntaje de Eficiencia Energetica</h2>
+<img src="score.png">
+<p>Actual=Puntaje Energetico de las instalaciones relevadas<br>
+Potencial=Puntaje Energetico que se podria alcanzar con mejoras sin hacer modificaciones radicales a la estructura</p>
+<p><h2>Distribucion Energetica Anual Actual</h2></p>
+<img src="d_anual.png">
+<p>R=Refrigeracion 20%<br>C=Calefaccion 15% <br>I=Iluminacion 35%<br>O=Otros Consumos 30%</p>
+<p><h2>Segmentacion del uso mensual por utilizacion</h2></p>
+<img src="end_use.png">
+<p>Azul=Refrigeracion<br>Rojo=Calefaccion<br>Amarillo=Iluminacion<br>Violeta=Otros Consumos<br>
+En todos los casos se expresan Watts/m2</p>
+
+<p><h2>Mejoras priorizadas por impacto en el consumo</h2></p>
+<p>Planta Baja</p>
+<table border="2" width='100%'>
+<tr align='center'><td>Ambiente</td><td>Recomendaciones</td></tr>
+<tr><td>Recepcion</td><td><ul><li>Colocar cortina de viento</li><li>Dimerizar luces</li><li>Colocar puerta separadora para disminuir perdidas termicas</li></ul></td></tr>
+<tr><td>Deposito</td><td><ul><li>Colocar sensor de movimiento controlando luces</li><li>Colocar aislacion termica en la puerta </li></ul></td></tr>
+<tr><td>Cocina</td><td><ul><li>Colocar sensor de movimiento controlando luces</li><li>Reubicar heladera en area de mayor circulacion de aire</li></ul></td></tr>
+</table>
+<br>
+<p>Primer Piso</p>
+<table border="2" width='100%'>
+<tr align='center'><td>Ambiente</td><td>Recomendaciones</td></tr>
+<tr><td>Area de trabajo</td><td><ul><li>Colocar paneles aislantes en la pared Norte</li><li>Dimerizar luces</li><li>Reemplazar luminarias por luminarias de alta eficiencia. Complementar iluminacion en escritorios con veladores</li><li>Colocar paneles aislantes en el techo</li></ul></td></tr>
+<tr><td>Sala de reuniones</td><td><ul><li>Cambiar vidrios del ventanal por DVH</li><li>Colocar paneles aislantes en el techo</li></ul></td></tr>
+</table>
+<br>
+<p>Otras recomendaciones</p>
+<table border="2" width='100%'>
+<tr align='center'><td>Mediciones</td><td>Recomendaciones</td></tr>
+<tr><td>Consumo constante fuera de horario laboral</td><td><ul><li>Consultoria para mejorar "Work Practices"</li></ul></td></tr>
+<tr><td>Picos de consumo en el inicio de la jornada</td><td><ul><li>Armar plan de encendido escalonado de equipos</li><li>Abrir ventanales de 6am a 8am en los meses de verano, para enfriar el ambiente y poder implementar un esquema de encendido escalonado de aires acondicionados</li></td></tr>
+</table>
+
+
+<p><h2>Consumo Energetico Mensual Actual vs Potencial (implementando mejoras)</h2></p>
+<img src="mensual.png">
+<p>Rojo= Consumo mensual actual en W/m2<br>Verde= Consumo mensual potencial implementando mejoras</p>
+<p><h2>Ahorro estimado anual, luego de mejoras= 12%</h2></p>
+
+{% endblock "body" %}
+
+{% block "column" %}
+
+	{% if edificios %}
+	<p>Mis Edificios</p>
+	<ul> 
+		{% for edificio in edificios %}
+		<li> {{ edificio }} </li>
+		{% endfor %} 
+	</ul>
+	{% endif %}
+
+{% endblock "column" %}

@@ -1,0 +1,62 @@
+{% extends "template.html" %}
+
+{% block "body" %}
+<table width='100%' border="1" bordercolor="FFFFFF" style="background-color:#FFFFFF" cellspacing="0" >
+<tr><td>
+	<table width='100%'>
+	<tr align="center" style="background-color:#52D030"><td><h2>Indice Energetico</h2></td></tr>
+	<tr><td>Codigo de cliente:</td></tr>
+	<tr><td>Edificio:</td></tr>
+	<tr><td>Fecha de relevamiento</td></tr>
+	<tr><td>Ubicacion</td></tr>
+	</table>
+</td></tr>
+<tr><td>
+	<table>
+	<tr>
+	<td style="height: 2em; width: 5em;" align="center"></td>
+	{% for i in score %}
+		<td style="height: 2em; width: 5em;" align="center"> {{ i }} </td>	
+	{% endfor %}
+	<td style="height: 2em; width: 5em;" align="center"></td>
+	</tr>
+	<tr>
+	<td style="height: 2em; width: 5em;" align="center">Menor eficiencia</td>
+	{% for i in barra %}
+		<td BGCOLOR="#{{ i }}" style="height: 2em; width: 5em;" align="center"></td>
+	{% endfor %}
+	<td style="height: 2em; width: 5em;" align="center">Mayor eficiencia</td>
+	<tr><td style="height: 2em; width: 5em;" align="center"></td>
+        {% for i in average %}
+                <td style="height: 2em; width: 5em;" align="center">{{ i }}</td>
+        {% endfor %}
+	<td style="height: 2em; width: 5em;" align="center"></td>
+	</tr>
+	</tr>
+
+	</table>
+</td></tr>
+
+<td><tr><table><tr><td><br>
+	<p>El Indice Actual refleja la eficiencia energetica por metro cuadrado. 
+	Se calcula mediante un estudio realizado en las instalaciones. <br>
+	El Indice Potencial refleja la eficiencia luego de implementar las reformas sugeridas.
+	El uso y ahorro energeticos reales dependen tambien de factores como mantenimiento, habitos laborales y el clima. Para aprender mas acerca de como ahorrar energia, visite: <a href=http://www.eaudit.com.ar>http://eaudit.com.ar</a></p>
+	</td></tr></table>
+</td></tr>
+</table>
+
+{% endblock "body" %}
+
+{% block "column" %}
+
+	{% if edificios %}
+	<p>Mis Edificios</p>
+	<ul> 
+		{% for edificio in edificios %}
+		<li> {{ edificio }} </li>
+		{% endfor %} 
+	</ul>
+	{% endif %}
+
+{% endblock "column" %}

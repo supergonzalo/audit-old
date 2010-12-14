@@ -1,0 +1,18 @@
+{% extends "template.html"%}
+
+{% block "tabs %}
+<ul>
+
+<li><a href="/accounts/profile">Reporte</li>
+</ul>
+
+{% endblock "tabs" %}
+
+
+{% block "col1" %}
+
+<p> Este es el general, bienvenido<p>
+
+{% endblock %}
+
+
