@@ -165,7 +165,7 @@ img {
 <body>
 <div id="header">
 	<table align="center" span="100%">
-	<tr><td><h1>eaudit - Inteligencia en el ahorro de energia</h1></td><td><img src="head" align="right"></td></tr>
+	<tr><td><h1>greenaudit - Inteligencia en el ahorro de energia</h1></td><td><img src="head" align="right"></td></tr>
 	</table>
 	<ul>
 	<li><a href="/">Home</a></li>
@@ -184,9 +184,15 @@ img {
 <div class="colmask rightmenu">
 	<div class="colleft">
 		<div class="col1">
-		{% block "body" %}
-		{{ col1 }}
+		{% block "tagg" %}
 		{% endblock %}
+		{% block "obj" %}
+		{% endblock %}
+		{% block "body" %}
+		{% endblock %}
+		{% block "report" %}
+		{% endblock %}
+
 		</div>
 		<div class="col2">
 		{% block "column" %}

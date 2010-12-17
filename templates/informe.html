@@ -1,15 +1,14 @@
-{% extends "template.html" %}
+{% extends "scorecard.html" %}
 
-{% block "body" %}
-<table width='100%'>
-<tr><td>Codigo de cliente:</td></tr>
-<tr><td>Edificio:</td><td>Fecha de relevamiento</td></tr>
-<tr><td>Ubicacion</td>
-</table>
-<h2>Puntaje de Eficiencia Energetica</h2>
-<img src="score.png">
-<p>Actual=Puntaje Energetico de las instalaciones relevadas<br>
-Potencial=Puntaje Energetico que se podria alcanzar con mejoras sin hacer modificaciones radicales a la estructura</p>
+{% block "obj" %}
+<h2>Objetivo del estudio</h2>
+<p>Construir un modelo fisico de las instalaciones con el fin de evaluar la Eficiencia Energetica actual y los principales 
+factores que la afectan. Con estos factores identificados, proponer estrategias de ahorro priorizadas por el impacto que 
+tendran las mismas en el consumo final. Al mismo tiempo evaluar cual es la mejora en el rendimiento que se puede esperar 
+al implementar estas mejoras con el fin de proyectar la inversion a realizar.</p>
+{% endblock %}
+
+{% block "report" %}
 <p><h2>Distribucion Energetica Anual Actual</h2></p>
 <img src="d_anual.png">
 <p>R=Refrigeracion 20%<br>C=Calefaccion 15% <br>I=Iluminacion 35%<br>O=Otros Consumos 30%</p>
@@ -45,9 +44,8 @@ En todos los casos se expresan Watts/m2</p>
 <p><h2>Consumo Energetico Mensual Actual vs Potencial (implementando mejoras)</h2></p>
 <img src="mensual.png">
 <p>Rojo= Consumo mensual actual en W/m2<br>Verde= Consumo mensual potencial implementando mejoras</p>
-<p><h2>Ahorro estimado anual, luego de mejoras= 12%</h2></p>
+{% endblock "report" %}
 
-{% endblock "body" %}
 
 {% block "column" %}
 
