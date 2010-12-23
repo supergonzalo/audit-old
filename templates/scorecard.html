@@ -2,7 +2,7 @@
 
 {% block "tagg" %}
         <table width='100%'>
-        <tr align="center"><td><h2>Indice Energetico</h2></td></tr>
+        <tr align="center"><td><h2>Categoria de Consumo Energetico</h2></td></tr>
         <tr><td>Codigo de cliente: {{ current.codigo }}</td></tr>
         <tr><td>Edificio:{{ current.nombre_edif }}</td></tr>
         <tr><td>Fecha de relevamiento:</td></tr>
@@ -21,9 +21,9 @@
 	padding-right: {{ rate.i }}em"></span>
 	{% if rate.msg %}
 		{% ifequal rate.msg "Indice Potencial: " %}
-		<span style="background:#CCCCCC; padding-right: {{ rate.pad }}em ">Ahorro</span></td>
+		<span style="background:#00DDDD; padding-right: {{ rate.pad }}em ">Ahorro</span>
 		{%  endifequal %}
-		<td>{{ rate.msg }} {{ rate.indice }}<br/>
+		{{ rate.msg }} {{ rate.indice }}
 	{% endif %}
 	</td></tr>
 	{% endfor %}
@@ -31,10 +31,12 @@
 	<br>Menor Eficiencia
 	</td></tr>
 	</table>
-	<p>El Indice Actual refleja la eficiencia energetica por metro cuadrado. 
-	Se calcula mediante el estudio realizado en las instalaciones. <br>
-	El Indice Potencial refleja la eficiencia luego de implementar las mejoras sugeridas.
-	El uso y ahorro energeticos reales dependen tambien de factores como mantenimiento, habitos laborales y el clima. Para aprender mas acerca de como ahorrar energia, visite: <a href=http://www.greenaudit.com.ar>http://greenaudit.com.ar</a></p>
+	<p>El Indice Actual refleja el consumo requerido anual por metro cuadrado, calculado  
+	mediante mediciones realizadas en las instalaciones. <br>
+	El Indice Potencial refleja la eficiencia luego de implementar las mejoras sugeridas.<br>
+	El ahorro energetico se calcula en base a la proyeccion de impacto de las reformas sugeridas. 
+	Los valores reales de consumo y ahorro dependen tambien de factores como mantenimiento, work practices 
+	y el clima.<br>Para aprender mas acerca de como ahorrar energia, visite: <a href=http://www.greenaudit.com.ar>http://greenaudit.com.ar</a></p>
 
 {% endblock "body" %}
 

@@ -139,7 +139,7 @@ def d_anual(request):
 
 	norm = mpl.colors.BoundaryNorm(bounds, cmap.N)
 	cb2 = mpl.colorbar.ColorbarBase(ax, cmap=cmap,boundaries=[0]+bounds+[10],norm=norm,ticks=t_bounds, spacing='proportional',orientation='horizontal')
-	#cb2.set_label('Discrete intervals, some other units')
+	##cb2.set_label('Discrete intervals, some other units')
         cb2.ax.set_xticklabels(['R','C','I','O'])
         response = HttpResponse(content_type='image/png')
         canvas.print_png(response)
