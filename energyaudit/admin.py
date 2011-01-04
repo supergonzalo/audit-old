@@ -7,26 +7,23 @@ admin.site.unregister(Site)
 #admin.site.unregister(User)
 admin.site.unregister(Group)
 
-class clienteAdmin(admin.ModelAdmin):
-	list_display = ('codigo', 'raz_social')
-    #search_fields = ('numero_socio', 'nombre', 'apellido')
-	def queryset(self, request):
-		qs = super(clienteAdmin, self).queryset(request)
-		return qs.filter(user=request.user)
-
 class edificioAdmin(admin.ModelAdmin):
+	list_display = ('nombre_edif','direccion')
         def queryset(self, request):
                 qs = super(edificioAdmin, self).queryset(request)
                 return qs.filter(user=request.user)
 
 class ambienteAdmin(admin.ModelAdmin):
+	list_display = ('nombre_amb','nombre_edif')
         def queryset(self, request):
                 qs = super(ambienteAdmin, self).queryset(request)
                 return qs.filter(user=request.user)
 
 class paredAdmin(admin.ModelAdmin):
-	list_display = ('ambiente_pared',)
-
+	list_display = ('nombre_amb','orientacion_pared')
+        def queryset(self, request):
+                qs = super(paredAdmin, self).queryset(request)
+                return qs.filter(user=request.user)
 
 
 class artefactoAdmin(admin.ModelAdmin):
@@ -34,16 +31,16 @@ class artefactoAdmin(admin.ModelAdmin):
                 qs = super(artefactoAdmin, self).queryset(request)
                 return qs.filter(user=request.user)
 class contactoAdmin(admin.ModelAdmin):
+	list_display = ('nombre_edif','nombre_pers')
         def queryset(self, request):
                 qs = super(contactoAdmin, self).queryset(request)
                 return qs.filter(user=request.user)
 
 
 
-admin.site.register(cliente,clienteAdmin)
 admin.site.register(edificio,edificioAdmin)
-admin.site.register(ambiente)
+admin.site.register(ambiente,ambienteAdmin)
 admin.site.register(pared,paredAdmin)
-admin.site.register(artefacto)
-admin.site.register(contacto)
+admin.site.register(artefacto,artefactoAdmin)
+admin.site.register(contacto,contactoAdmin)
 
